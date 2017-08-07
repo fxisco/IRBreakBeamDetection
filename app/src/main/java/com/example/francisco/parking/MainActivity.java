@@ -2,7 +2,6 @@ package com.example.francisco.parking;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.util.Log;
 
 import com.google.android.things.pio.Gpio;
