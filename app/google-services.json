@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "949723866631",
+    "firebase_url": "https://empty-parking.firebaseio.com",
+    "project_id": "empty-parking",
+    "storage_bucket": "empty-parking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949723866631:android:4f8b14d5a200524d",
+        "android_client_info": {
+          "package_name": "com.fcorcino.emptyparking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949723866631-g9hm542e7tbkiljjvr33hfj9fhqen8u1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fcorcino.emptyparking",
+            "certificate_hash": "3b2b217768facd1e79e01920229baab786894d71"
+          }
+        },
+        {
+          "client_id": "949723866631-beqt0j2j8oelf1bmne9tvar4vc98k5eh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fcorcino.emptyparking",
+            "certificate_hash": "9e28074b54adbabdd938b77a94c1613500eccd41"
+          }
+        },
+        {
+          "client_id": "949723866631-uk7q23aklnlbe0h9b64j5dvsoqst9912.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXnCXIH3F40Q3tnc-P1juAFe8MQh315Nw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949723866631-uk7q23aklnlbe0h9b64j5dvsoqst9912.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949723866631:android:15aed1f48d97ad32",
+        "android_client_info": {
+          "package_name": "com.example.francisco.parking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949723866631-c370o3eob8lkpf4fi2gm95sfkh094pdk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.francisco.parking",
+            "certificate_hash": "605a299da87e9acd596afc5851522fc3b6038269"
+          }
+        },
+        {
+          "client_id": "949723866631-uk7q23aklnlbe0h9b64j5dvsoqst9912.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXnCXIH3F40Q3tnc-P1juAFe8MQh315Nw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949723866631-uk7q23aklnlbe0h9b64j5dvsoqst9912.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
