@@ -15,26 +15,29 @@ import java.io.IOException;
 public class MainActivity extends Activity {
 
     static final String TAG = MainActivity.class.getSimpleName();
-    private static final String GPIO_NAME = "BCM4";
-    private Gpio mGpio;
-    DatabaseReference mRef;
+    static final String GPIO_NAME = "BCM4";
+    Gpio mGpio;
+    DatabaseReference mFirebaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        mRef = database.getReference("parking/0/0");
+        mFirebaseReference = database.getReference("parking")
+                .child("0")
+                .child("0")
+                .child("status");
 
         try {
             PeripheralManagerService manager = new PeripheralManagerService();
-
             mGpio = manager.openGpio(GPIO_NAME);
+
             mGpio.setDirection(Gpio.DIRECTION_IN);
             mGpio.setEdgeTriggerType(Gpio.EDGE_BOTH);
             mGpio.setActiveType(Gpio.ACTIVE_HIGH);
         } catch (IOException e) {
-            Log.w(TAG, "Unable to access GPIO", e);
+            Log.e(TAG, "Unable to access GPIO.", e);
         }
     }
 
@@ -45,7 +48,7 @@ public class MainActivity extends Activity {
         try {
             mGpio.registerGpioCallback(mGpioCallback);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e(TAG, "Unable to register GPIO callback.", e);
         }
     }
 
@@ -65,7 +68,7 @@ public class MainActivity extends Activity {
                 mGpio.close();
                 mGpio = null;
             } catch (IOException e) {
-                Log.w(TAG, "Unable to close GPIO", e);
+                Log.e(TAG, "Unable to close GPIO.", e);
             }
         }
     }
@@ -74,10 +77,11 @@ public class MainActivity extends Activity {
         @Override
         public boolean onGpioEdge(Gpio gpio) {
             try {
-                mRef.child("status").setValue(gpio.getValue());
-                Log.e(TAG, "Setting value to: " + gpio.getValue());
+                mFirebaseReference.setValue(gpio.getValue());
+
+                Log.i(TAG, "Setting value to: " + gpio.getValue());
             } catch (IOException e) {
-                e.printStackTrace();
+                Log.i(TAG, "Unable to detect GPIO edge changes.");
             }
 
             return true;
@@ -85,7 +89,7 @@ public class MainActivity extends Activity {
 
         @Override
         public void onGpioError(Gpio gpio, int error) {
-            Log.w(TAG, gpio + ": Error event " + error);
+            Log.e(TAG, gpio + ": Error event " + error);
         }
     };
 }
